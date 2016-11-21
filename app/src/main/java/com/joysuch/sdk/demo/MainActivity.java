@@ -147,12 +147,12 @@ public class MainActivity extends Activity implements OnClickListener {
     *cteate at 2016/11/21 下午4:11
     */
     private void initView() {
-
         btLoc = (Button) findViewById(R.id.btLoc);              //添加点位按钮
         btLoc.setOnClickListener(this);
 
         btAnalyser = (Button) findViewById(R.id.btNav);        //查询分析按钮
         btAnalyser.setOnClickListener(this);
+
         etKw = (EditText) findViewById(R.id.editText);
     }
 
@@ -270,8 +270,8 @@ public class MainActivity extends Activity implements OnClickListener {
             Toast.makeText(this, "不在服务区内", Toast.LENGTH_SHORT).show();
             return;
         }
-        String con = etKw.getText().toString().trim();
-        if (con == null || "".equals(con)) {
+        String input_dest = etKw.getText().toString().trim();
+        if (input_dest == null || "".equals(input_dest)) {
             Toast.makeText(this, "请输入目的地", Toast.LENGTH_SHORT).show();
             return;
         }
@@ -279,7 +279,7 @@ public class MainActivity extends Activity implements OnClickListener {
         ArrayList<FMGroupInfo> groups = scene.getGroups();
         int floorNum = groups.size();                            //有多少层
         for (int groupId = 1; groupId <= floorNum; groupId++) {
-            FMSearchModelByKeywordRequest keywordRequest = new FMSearchModelByKeywordRequest(groupId, con.trim());   //关键字搜索
+            FMSearchModelByKeywordRequest keywordRequest = new FMSearchModelByKeywordRequest(groupId, input_dest.trim());   //关键字搜索
             ArrayList<FMSearchResult> resultSet = searchAnalyser.executeFMSearchRequest(keywordRequest);
             for (FMSearchResult info : resultSet) {         //查询坐标
                 int gid = (Integer) info.get("gid");
@@ -319,6 +319,7 @@ public class MainActivity extends Activity implements OnClickListener {
             endStyle.setImageFromAssets("ico_end.png");
             addMarker(mlForNaviEnd, endPt, endStyle);
         }
+
         //导航路径
         if (startPt != null && endPt != null) {
             anlyzeNavi(startGroupId, startPt, endGroupId, endPt);
@@ -381,7 +382,6 @@ public class MainActivity extends Activity implements OnClickListener {
         }
     }
 
-
     /**
      * 在指定位置添加标注物到指定的图层。
      *
@@ -402,10 +402,11 @@ public class MainActivity extends Activity implements OnClickListener {
         return marker;
     }
 
-
     /**
      * 清除
-     * cteate at 2016/11/21 下午4:20
+     *
+     * @author wangkuan
+     * cteate at 2016/11/21 下午4:50
      */
     private void clear() {
         //清除所有线
@@ -424,11 +425,9 @@ public class MainActivity extends Activity implements OnClickListener {
 
     }
 
-
     @Override
     public void onBackPressed() {
         super.onBackPressed();
-
         map.onDestory();
         this.finish();
         System.exit(0);

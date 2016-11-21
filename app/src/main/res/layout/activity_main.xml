@@ -19,17 +19,6 @@
 		android:layout_alignParentBottom="true"
 		android:layout_marginBottom="20dp"/>
 
-	<EditText
-		android:id="@+id/editText"
-		android:layout_width="wrap_content"
-		android:layout_height="wrap_content"
-		android:hint="@string/input_dest"
-		android:layout_alignParentTop="false"
-		android:layout_toLeftOf="@+id/btNav"
-		android:layout_toStartOf="@+id/btNav"
-		android:ems="6">
-	</EditText>
-
 	<Button
 		android:id="@+id/btNav"
 		android:layout_width="wrap_content"
@@ -38,5 +27,16 @@
 		android:layout_alignParentRight="true"
 		android:layout_alignParentEnd="true" />
 
+	<EditText
+		android:id="@+id/editText"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:hint="@string/input_dest"
+		android:layout_alignParentTop="false"
+		android:layout_alignBottom="@+id/btNav"
+		android:layout_toLeftOf="@+id/btNav"
+		android:layout_toStartOf="@+id/btNav"
+		android:ems="6">
+	</EditText>
 
 </RelativeLayout>
