@@ -15,7 +15,7 @@
 		android:id="@+id/btLoc"
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
-		android:text="我的位置"
+		android:text="@string/bt_location"
 		android:layout_alignParentBottom="true"
 		android:layout_marginBottom="20dp"/>
 
@@ -23,8 +23,7 @@
 		android:id="@+id/editText"
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
-		android:layout_weight="1"
-		android:hint="输入目的地"
+		android:hint="@string/input_dest"
 		android:layout_alignParentTop="false"
 		android:layout_toLeftOf="@+id/btNav"
 		android:layout_toStartOf="@+id/btNav"
@@ -35,8 +34,9 @@
 		android:id="@+id/btNav"
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
-		android:text="导航"
-		android:layout_alignParentRight="true"/>
+		android:text="@string/bt_navigate"
+		android:layout_alignParentRight="true"
+		android:layout_alignParentEnd="true" />
 
 
 </RelativeLayout>

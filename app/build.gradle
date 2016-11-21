@@ -2,11 +2,11 @@ apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion 19
-    buildToolsVersion "23.0.2"
+    buildToolsVersion "23.0.3"
     defaultConfig {
         applicationId 'com.joysuch.sdk.demo'
         minSdkVersion 10
-        targetSdkVersion 19
+        targetSdkVersion 23
     }
     buildTypes {
         release {
@@ -22,7 +22,7 @@ android {
 }
 
 dependencies {
-    compile 'com.android.support:support-v4:19.1.0'
+    compile 'com.android.support:support-v4:23.3.0'
     compile files('libs/JoysuchSDK_V2.3.0_pro.jar')
     compile files('libs/SKYBeaconSDK.jar')
     compile files('libs/fengmap-beta-1.2.1.jar')
