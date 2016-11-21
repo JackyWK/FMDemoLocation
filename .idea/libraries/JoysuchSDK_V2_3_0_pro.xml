@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="JoysuchSDK_V2.3.0_pro">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/app/libs/JoysuchSDK_V2.3.0_pro.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

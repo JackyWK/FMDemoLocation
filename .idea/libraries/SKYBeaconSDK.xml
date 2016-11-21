@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="SKYBeaconSDK">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/app/libs/SKYBeaconSDK.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

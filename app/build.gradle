@@ -1,0 +1,29 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 19
+    buildToolsVersion "23.0.2"
+    defaultConfig {
+        applicationId 'com.joysuch.sdk.demo'
+        minSdkVersion 10
+        targetSdkVersion 19
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
+        }
+    }
+    sourceSets.main{
+        jniLibs.srcDirs = ['libs']
+    }
+    productFlavors {
+    }
+}
+
+dependencies {
+    compile 'com.android.support:support-v4:19.1.0'
+    compile files('libs/JoysuchSDK_V2.3.0_pro.jar')
+    compile files('libs/SKYBeaconSDK.jar')
+    compile files('libs/fengmap-beta-1.2.1.jar')
+}
