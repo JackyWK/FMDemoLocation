@@ -47,6 +47,7 @@ import java.util.ArrayList;
  * The type Main activity.
  */
 public class MainActivity extends Activity implements OnClickListener {
+    public static final float LINE_WIDTH = 1.5f;
     private FMMapView mapView;                    //地图容器对象
     private FMMap map;                            //操作地图的对象
     private FMMapInfo scene;                    //整个场景的配置信息
@@ -236,9 +237,9 @@ public class MainActivity extends Activity implements OnClickListener {
     }
 
     /*
-    *定位与导航按钮
-    *@author wangkuan
-    *cteate at 2016/11/21 下午4:17
+    * 定位与导航按钮
+    * @author wangkuan
+    * cteate at 2016/11/21 下午4:17
     */
     @Override
     public void onClick(View v) {
@@ -270,11 +271,13 @@ public class MainActivity extends Activity implements OnClickListener {
             Toast.makeText(this, "不在服务区内", Toast.LENGTH_SHORT).show();
             return;
         }
+
         String input_dest = etKw.getText().toString().trim();
         if (input_dest == null || "".equals(input_dest)) {
             Toast.makeText(this, "请输入目的地", Toast.LENGTH_SHORT).show();
             return;
         }
+
         //查询分析
         ArrayList<FMGroupInfo> groups = scene.getGroups();
         int floorNum = groups.size();                            //有多少层
@@ -348,7 +351,7 @@ public class MainActivity extends Activity implements OnClickListener {
             //画线
             FMLineMarkerStyle lineStyle1 = new FMLineMarkerStyle();
             lineStyle1.setFillColor(Color.RED);
-            lineStyle1.setLineWidth(1.5f);
+            lineStyle1.setLineWidth(LINE_WIDTH);
             lineStyle1.setLineMode(FMLineMarker.LineMode.FMLINE_CIRCLE);
             lineStyle1.setLineType(FMLineMarker.LineType.FMLINE_DASHED);
 
@@ -441,4 +444,11 @@ public class MainActivity extends Activity implements OnClickListener {
     }
 
 
+    public FMMapView getMapView() {
+        return mapView;
+    }
+
+    public void setMapView(FMMapView mapView) {
+        this.mapView = mapView;
+    }
 }
